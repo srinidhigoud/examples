@@ -1,6 +1,6 @@
-GPU = k80
-#!/bin/bash
 
+#!/bin/bash
+GPU = k80
 #SBATCH --verbose
 #SBATCH --job-name=expCloudML
 #SBATCH --mem=100GB
