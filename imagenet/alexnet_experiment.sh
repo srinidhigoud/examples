@@ -1,4 +1,3 @@
-
 #!/bin/bash
 set GPU = k80
 #SBATCH --verbose
