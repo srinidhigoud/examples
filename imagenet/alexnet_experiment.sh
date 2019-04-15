@@ -25,7 +25,7 @@ module load python3/intel/3.6.3 cuda/9.0.176 nccl/cuda9.0/2.4.2
 
 source ~/pytorch_env/py3.6.3/bin/activate
 
-echo "alexnet_4_0.01_%GPU%_full"
+echo "alexnet_4_0.01_"%GPU%"_full"
 nvprof --timeout 300 --output-profile alexnet_4_0.01_%q{GPU}_full_%p.nvvp --csv --print-summary python main.py --arch alexnet -b 4 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
 # nvprof --timeout 300 --kernels "convolve" --metrics gld_efficiency --csv --print-summary python main.py --arch alexnet -b 8 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
 # nvprof --timeout 300 --output-profile alexnet_64_0.01_%GPU%_full_%p_mem.nvvp --csv --track-memory-allocations on --print-summary python main.py --arch alexnet -b 64 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
