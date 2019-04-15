@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set GPU = %1
 #SBATCH --verbose
 #SBATCH --job-name=gExpCloudML
 #SBATCH --mem=100GB
@@ -13,7 +13,7 @@
 ##SBATCH --cpus-per-task=28
 ##SBATCH --exclusive
 ##SBATCH --time=00:60:00
-##SBATCH --gres=gpu:k80:4
+##SBATCH --gres=gpu:%GPU%:4
 ##SBATCH --gres=gpu:p40:4
 ##SBATCH --reservation=chung
 
@@ -30,9 +30,9 @@ echo "general_alexnet_16_0.01_full_mem"
 # nvprof --timeout 300 --csv --cpu-profiling on --print-summary python main.py --arch alexnet -b 16 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
 nvprof --timeout 300 --csv --track-memory-allocations on --print-summary python main.py --arch alexnet -b 16 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
 # nvprof --timeout 1800 --csv --track-memory-allocations on --cpu-profiling on --print-summary python main.py --arch alexnet -b 16 --epochs 1 --lr 0.001 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
-# nvprof --timeout 1800 --output-profile alexnet_16_0.001_small_k80_timeout_%p.nvvp --csv --log-file alexnet_16_0.001_small_k80_timeout_%p.log --track-memory-allocations on --cpu-profiling on --print-summary python main.py --arch alexnet -b 16 --epochs 1 --lr 0.001 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
+# nvprof --timeout 1800 --output-profile alexnet_16_0.001_small_%GPU%_timeout_%p.nvvp --csv --log-file alexnet_16_0.001_small_%GPU%_timeout_%p.log --track-memory-allocations on --cpu-profiling on --print-summary python main.py --arch alexnet -b 16 --epochs 1 --lr 0.001 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
 
 
-# echo "alexnet_16_0.001_k80_full"
-# nvprof --timeout 1800 --output-profile alexnet_16_0.001_small_k80_timeout_%p.nvvp --csv --log-file alexnet_16_0.001_small_k80_timeout_%p.log --track-memory-allocations on --cpu-profiling on --print-summary python main.py --arch alexnet -b 16 --epochs 1 --lr 0.001 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
-# # nvprof --output-profile alexnet_16_0.001_small_k80_wotimeout_%p.nvvp --csv --log-file alexnet_16_0.001_small_k80_wotimeout_%p.log --track-memory-allocations on --cpu-profiling on --print-summary python main.py --arch alexnet -b 16 --epochs 1 --lr 0.001 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
+# echo "alexnet_16_0.001_%GPU%_full"
+# nvprof --timeout 1800 --output-profile alexnet_16_0.001_small_%GPU%_timeout_%p.nvvp --csv --log-file alexnet_16_0.001_small_%GPU%_timeout_%p.log --track-memory-allocations on --cpu-profiling on --print-summary python main.py --arch alexnet -b 16 --epochs 1 --lr 0.001 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
+# # nvprof --output-profile alexnet_16_0.001_small_%GPU%_wotimeout_%p.nvvp --csv --log-file alexnet_16_0.001_small_%GPU%_wotimeout_%p.log --track-memory-allocations on --cpu-profiling on --print-summary python main.py --arch alexnet -b 16 --epochs 1 --lr 0.001 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
