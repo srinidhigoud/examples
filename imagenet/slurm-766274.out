@@ -1,0 +1,25 @@
+alexnet_4_0.01_%GPU%_full
+======== Warning: unable to locate cuda driver library, GPU profiling skipped
+THCudaCheck FAIL file=/pytorch/aten/src/THC/THCGeneral.cpp line=74 error=35 : CUDA driver version is insufficient for CUDA runtime version
+=> creating model 'alexnet'
+Traceback (most recent call last):
+  File "main.py", line 417, in <module>
+    main()
+  File "main.py", line 113, in main
+    main_worker(args.gpu, ngpus_per_node, args)
+  File "main.py", line 165, in main_worker
+    model.cuda()
+  File "/home/sgm400/pytorch_env/py3.6.3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 258, in cuda
+    return self._apply(lambda t: t.cuda(device))
+  File "/home/sgm400/pytorch_env/py3.6.3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 185, in _apply
+    module._apply(fn)
+  File "/home/sgm400/pytorch_env/py3.6.3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 185, in _apply
+    module._apply(fn)
+  File "/home/sgm400/pytorch_env/py3.6.3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 185, in _apply
+    module._apply(fn)
+  File "/home/sgm400/pytorch_env/py3.6.3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 191, in _apply
+    param.data = fn(param.data)
+  File "/home/sgm400/pytorch_env/py3.6.3/lib/python3.6/site-packages/torch/nn/modules/module.py", line 258, in <lambda>
+    return self._apply(lambda t: t.cuda(device))
+RuntimeError: cuda runtime error (35) : CUDA driver version is insufficient for CUDA runtime version at /pytorch/aten/src/THC/THCGeneral.cpp:74
+======== Error: Application returned non-zero code 1
