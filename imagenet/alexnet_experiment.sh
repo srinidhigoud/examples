@@ -1,5 +1,5 @@
 #!/bin/bash
-set GPU = %1
+set GPU = p40
 #SBATCH --verbose
 #SBATCH --job-name=expCloudML
 #SBATCH --mem=100GB
