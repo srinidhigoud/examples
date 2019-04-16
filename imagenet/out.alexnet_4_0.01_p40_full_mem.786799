@@ -1,0 +1,3 @@
+alexnet_4_0.01_p40_full_mem
+==124454== NVPROF is profiling process 124454, command: python main.py --arch alexnet -b 4 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
+slurmstepd: error: *** JOB 786799 ON gpu-31 CANCELLED AT 2019-04-16T13:27:31 ***
