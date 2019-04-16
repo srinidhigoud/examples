@@ -28,8 +28,8 @@ source ~/pytorch_env/py3.6.3/bin/activate
 echo "resnet18_1_0.01_k80_full_mem"
 # nvprof --timeout 300 --output-profile resnet18_64_0.01_k80_full_%p.nvvp --csv --print-summary python main.py --arch resnet18 -b 64 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
 # nvprof --timeout 300 --output-profile resnet18_4_0.01_k80_conv_%p.nvvp --kernels "convolve" --metrics gld_efficiency --csv --print-summary python main.py --arch resnet18 -b 4 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
-# nvprof --timeout 300 --output-profile resnet18_4_0.01_k80_full_%p_mem.nvvp --csv --track-memory-allocations on --print-summary python main.py --arch resnet18 -b 1 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
-nvprof --timeout 600 --csv --track-memory-allocations on --print-summary python main.py --arch resnet18 -b 1 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
+nvprof --timeout 300 --output-profile resnet18_1_0.01_k80_full_%p_mem.nvvp --csv --track-memory-allocations on --print-summary python main.py --arch resnet18 -b 1 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
+# nvprof --timeout 600 --csv --track-memory-allocations on --print-summary python main.py --arch resnet18 -b 1 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
 
 # nvprof --timeout 900 --csv --metric gld_efficiency python main.py --arch alexnet -b 16 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
 # nvprof --timeout 300 --csv --cpu-profiling on --print-summary python main.py --arch alexnet -b 16 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
