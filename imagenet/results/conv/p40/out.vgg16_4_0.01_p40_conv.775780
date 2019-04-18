@@ -1,0 +1,10 @@
+vgg16_4_0.01_p40_conv
+==104453== NVPROF is profiling process 104453, command: python main.py --arch vgg16 -b 4 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
+=> creating model 'vgg16'
+==104453== Some kernel(s) will be replayed on device 1 in order to collect all events/metrics.
+==104453== Some kernel(s) will be replayed on device 2 in order to collect all events/metrics.
+==104453== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==104453== Some kernel(s) will be replayed on device 3 in order to collect all events/metrics.
+==104453== Execution timeout, stopping the application...
+==104453== Error: Internal profiling error 4277:999.
+======== Error: CUDA profiling error.

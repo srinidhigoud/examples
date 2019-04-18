@@ -1,0 +1,39 @@
+alexnet_600_32_0.01_p40_full_mem
+==70801== NVPROF is profiling process 70801, command: python main.py --arch alexnet -b 32 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
+=> creating model 'alexnet'
+==70801== Execution timeout, stopping the application...
+Traceback (most recent call last):
+  File "/share/apps/python3/3.6.3/intel/lib/python3.6/multiprocessing/resource_sharer.py", line 142, in _serve
+    with self._listener.accept() as conn:
+  File "/share/apps/python3/3.6.3/intel/lib/python3.6/multiprocessing/connection.py", line 455, in accept
+    deliver_challenge(c, self._authkey)
+  File "/share/apps/python3/3.6.3/intel/lib/python3.6/multiprocessing/connection.py", line 722, in deliver_challenge
+    response = connection.recv_bytes(256)        # reject large message
+  File "/share/apps/python3/3.6.3/intel/lib/python3.6/multiprocessing/connection.py", line 216, in recv_bytes
+    buf = self._recv_bytes(maxlength)
+  File "/share/apps/python3/3.6.3/intel/lib/python3.6/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/share/apps/python3/3.6.3/intel/lib/python3.6/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+ConnectionResetError: [Errno 104] Connection reset by peer
+==70801== Profiling application: python main.py --arch alexnet -b 32 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
+==70801== Profiling result:
+"Type","Time(%)","Time","Calls","Avg","Min","Max","Name"
+,%,ms,,ms,us,ms,
+"GPU activities",100.000000,339.683010,17,19.981353,1.120000,199.968309,"[CUDA memcpy HtoD]"
+"API calls",99.862632,549984.625759,8,68748.078219,111872.048000,549165.572463,"cudaMalloc"
+"API calls",0.067481,371.643855,4,92.910963,83036.147000,104.406300,"cudaHostAlloc"
+"API calls",0.064323,354.254274,17,20.838486,23.726000,201.862407,"cudaMemcpyAsync"
+"API calls",0.002356,12.974738,8,1.621842,1092.977000,2.435005,"cuDeviceTotalMem"
+"API calls",0.001566,8.622144,756,0.011404,0.174000,0.560352,"cuDeviceGetAttribute"
+"API calls",0.001364,7.514279,8,0.939284,915.079000,0.962542,"cudaGetDeviceProperties"
+"API calls",0.000131,0.721398,8,0.090174,69.305000,0.132884,"cuDeviceGetName"
+"API calls",0.000080,0.440082,16,0.027505,7.935000,0.076055,"cudaStreamSynchronize"
+"API calls",0.000039,0.212294,111,0.001912,0.348000,0.027285,"cudaGetDevice"
+"API calls",0.000011,0.061254,7,0.008750,0.668000,0.041100,"cudaSetDevice"
+"API calls",0.000008,0.044662,1,0.044662,44.662000,0.044662,"cudaStreamCreateWithPriority"
+"API calls",0.000006,0.035373,56,0.000631,0.142000,0.014637,"cudaGetDeviceCount"
+"API calls",0.000002,0.009678,12,0.000806,0.313000,0.004489,"cuDeviceGet"
+"API calls",0.000001,0.004737,4,0.001184,0.403000,0.003334,"cuDeviceGetCount"
+"API calls",0.000001,0.002923,1,0.002923,2.923000,0.002923,"cuInit"
+"API calls",0.000000,0.002175,1,0.002175,2.175000,0.002175,"cuDriverGetVersion"

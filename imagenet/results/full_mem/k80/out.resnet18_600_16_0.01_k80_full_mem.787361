@@ -1,0 +1,26 @@
+resnet18_600_16_0.01_k80_full_mem
+==169646== NVPROF is profiling process 169646, command: python main.py --arch resnet18 -b 16 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
+=> creating model 'resnet18'
+==169646== Execution timeout, stopping the application...
+==169646== Profiling application: python main.py --arch resnet18 -b 16 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
+==169646== Profiling result:
+"Type","Time(%)","Time","Calls","Avg","Min","Max","Name"
+,%,ms,,us,us,ms,
+"GPU activities",100.000000,52.969535,123,430.646000,1.216000,13.225623,"[CUDA memcpy HtoD]"
+"API calls",99.938527,491329.127700,14,35094937.692000,90489.377000,489964.625944,"cudaMalloc"
+"API calls",0.037195,182.860689,2,91430.344000,83912.365000,98.948324,"cudaHostAlloc"
+"API calls",0.015034,73.909809,123,600.892000,9.094000,14.809985,"cudaMemcpyAsync"
+"API calls",0.003913,19.238269,8,2404.783000,2298.155000,2.852340,"cudaGetDeviceProperties"
+"API calls",0.002817,13.849564,756,18.319000,0.138000,0.989957,"cuDeviceGetAttribute"
+"API calls",0.001624,7.981789,8,997.723000,870.737000,1.323197,"cuDeviceTotalMem"
+"API calls",0.000476,2.342468,122,19.200000,4.828000,0.145308,"cudaStreamSynchronize"
+"API calls",0.000238,1.168262,8,146.032000,87.714000,0.215824,"cuDeviceGetName"
+"API calls",0.000153,0.751618,747,1.006000,0.297000,0.017882,"cudaGetDevice"
+"API calls",0.000009,0.045119,7,6.445000,0.711000,0.029213,"cudaSetDevice"
+"API calls",0.000008,0.039244,1,39.244000,39.244000,0.039244,"cudaStreamCreateWithPriority"
+"API calls",0.000003,0.016997,56,0.303000,0.117000,0.002900,"cudaGetDeviceCount"
+"API calls",0.000002,0.008188,12,0.682000,0.256000,0.003191,"cuDeviceGet"
+"API calls",0.000001,0.003958,4,0.989000,0.268000,0.002657,"cuDeviceGetCount"
+"API calls",0.000000,0.002359,1,2.359000,2.359000,0.002359,"cuInit"
+"API calls",0.000000,0.001774,1,1.774000,1.774000,0.001774,"cuDriverGetVersion"
+==169646== Warning: Some profiling data are not recorded. Make sure cudaProfilerStop() or cuProfilerStop() is called before application exit to flush profile data.

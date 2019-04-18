@@ -1,0 +1,10 @@
+resnet18_32_0.01_p40_conv
+==65590== NVPROF is profiling process 65590, command: python main.py --arch resnet18 -b 32 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
+=> creating model 'resnet18'
+==65590== Some kernel(s) will be replayed on device 1 in order to collect all events/metrics.
+==65590== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==65590== Some kernel(s) will be replayed on device 2 in order to collect all events/metrics.
+==65590== Some kernel(s) will be replayed on device 3 in order to collect all events/metrics.
+==65590== Execution timeout, stopping the application...
+==65590== Error: Internal profiling error 4277:999.
+======== Error: CUDA profiling error.

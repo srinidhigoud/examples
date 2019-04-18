@@ -1,0 +1,40 @@
+vgg16_600_8_0.01_p40_full_mem
+==168268== NVPROF is profiling process 168268, command: python main.py --arch vgg16 -b 8 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
+=> creating model 'vgg16'
+==168268== Execution timeout, stopping the application...
+Traceback (most recent call last):
+  File "/share/apps/python3/3.6.3/intel/lib/python3.6/multiprocessing/resource_sharer.py", line 142, in _serve
+    with self._listener.accept() as conn:
+  File "/share/apps/python3/3.6.3/intel/lib/python3.6/multiprocessing/connection.py", line 455, in accept
+    deliver_challenge(c, self._authkey)
+  File "/share/apps/python3/3.6.3/intel/lib/python3.6/multiprocessing/connection.py", line 722, in deliver_challenge
+    response = connection.recv_bytes(256)        # reject large message
+  File "/share/apps/python3/3.6.3/intel/lib/python3.6/multiprocessing/connection.py", line 216, in recv_bytes
+    buf = self._recv_bytes(maxlength)
+  File "/share/apps/python3/3.6.3/intel/lib/python3.6/multiprocessing/connection.py", line 407, in _recv_bytes
+    buf = self._recv(4)
+  File "/share/apps/python3/3.6.3/intel/lib/python3.6/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+ConnectionResetError: [Errno 104] Connection reset by peer
+==168268== Profiling application: python main.py --arch vgg16 -b 8 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
+==168268== Profiling result:
+"Type","Time(%)","Time","Calls","Avg","Min","Max","Name"
+,%,ms,,ms,us,ms,
+"GPU activities",100.000000,265.303733,33,8.039507,1.056000,186.224207,"[CUDA memcpy HtoD]"
+"API calls",99.911248,550615.270122,14,39329.662151,107622.784000,549119.202037,"cudaMalloc"
+"API calls",0.049744,274.138975,33,8.307241,15.283000,186.861883,"cudaMemcpyAsync"
+"API calls",0.033651,185.450256,2,92.725128,82963.598000,102.486658,"cudaHostAlloc"
+"API calls",0.002056,11.328366,8,1.416045,979.720000,2.013460,"cuDeviceTotalMem"
+"API calls",0.001536,8.466840,756,0.011199,0.141000,0.549293,"cuDeviceGetAttribute"
+"API calls",0.001355,7.467533,8,0.933441,908.951000,0.957357,"cudaGetDeviceProperties"
+"API calls",0.000188,1.038240,32,0.032445,7.920000,0.091315,"cudaStreamSynchronize"
+"API calls",0.000130,0.714219,8,0.089277,67.459000,0.130110,"cuDeviceGetName"
+"API calls",0.000051,0.280215,207,0.001353,0.344000,0.023561,"cudaGetDevice"
+"API calls",0.000016,0.087296,7,0.012470,0.747000,0.036854,"cudaSetDevice"
+"API calls",0.000012,0.067334,1,0.067334,67.334000,0.067334,"cudaStreamCreateWithPriority"
+"API calls",0.000007,0.040323,56,0.000720,0.127000,0.017173,"cudaGetDeviceCount"
+"API calls",0.000005,0.025882,12,0.002156,0.340000,0.006617,"cuDeviceGet"
+"API calls",0.000001,0.005438,4,0.001359,0.283000,0.004105,"cuDeviceGetCount"
+"API calls",0.000000,0.002623,1,0.002623,2.623000,0.002623,"cuInit"
+"API calls",0.000000,0.001929,1,0.001929,1.929000,0.001929,"cuDriverGetVersion"
+==168268== Warning: Some profiling data are not recorded. Make sure cudaProfilerStop() or cuProfilerStop() is called before application exit to flush profile data.

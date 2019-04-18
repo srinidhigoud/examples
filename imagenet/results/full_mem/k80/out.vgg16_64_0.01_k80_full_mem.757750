@@ -1,0 +1,21 @@
+vgg16_64_0.01_k80_full_mem
+==121310== NVPROF is profiling process 121310, command: python main.py --arch vgg16 -b 64 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
+==121310== Execution timeout, stopping the application...
+==121310== Profiling application: python main.py --arch vgg16 -b 64 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
+==121310== Profiling result:
+No kernels were profiled.
+"Type","Time(%)","Time","Calls","Avg","Min","Max","Name"
+,%,ms,,ms,ms,ms,
+"API calls",34.551484,8.568594,756,0.011334,0.000248,0.435140,"cuDeviceGetAttribute"
+"API calls",32.844063,8.145162,8,1.018145,1.003586,1.026582,"cudaGetDeviceProperties"
+"API calls",29.403396,7.291894,8,0.911486,0.887582,0.943361,"cuDeviceTotalMem"
+"API calls",2.892071,0.717219,8,0.089652,0.086111,0.096654,"cuDeviceGetName"
+"API calls",0.109192,0.027079,6,0.004513,0.000518,0.021536,"cudaGetDevice"
+"API calls",0.065610,0.016271,48,0.000338,0.000187,0.003466,"cudaGetDeviceCount"
+"API calls",0.052678,0.013064,5,0.002612,0.001193,0.007486,"cudaSetDevice"
+"API calls",0.039521,0.009801,4,0.002450,0.000390,0.006467,"cuDeviceGetCount"
+"API calls",0.032460,0.008050,12,0.000670,0.000287,0.003292,"cuDeviceGet"
+"API calls",0.004782,0.001186,1,0.001186,0.001186,0.001186,"cuInit"
+"API calls",0.004742,0.001176,1,0.001176,0.001176,0.001176,"cuDriverGetVersion"
+==121310== Warning: Some profiling data are not recorded. Make sure cudaProfilerStop() or cuProfilerStop() is called before application exit to flush profile data.
+==121310== Generated result file: /scratch/pm2758/cloudML/imagenet/vgg16_64_0.01_k80_full_121310_mem.nvvp

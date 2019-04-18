@@ -1,0 +1,10 @@
+resnet18_16_0.01_k80_conv
+==62860== NVPROF is profiling process 62860, command: python main.py --arch resnet18 -b 16 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
+=> creating model 'resnet18'
+==62860== Some kernel(s) will be replayed on device 1 in order to collect all events/metrics.
+==62860== Some kernel(s) will be replayed on device 0 in order to collect all events/metrics.
+==62860== Some kernel(s) will be replayed on device 2 in order to collect all events/metrics.
+==62860== Some kernel(s) will be replayed on device 3 in order to collect all events/metrics.
+==62860== Execution timeout, stopping the application...
+==62860== Error: Internal profiling error 4277:999.
+======== Error: CUDA profiling error.

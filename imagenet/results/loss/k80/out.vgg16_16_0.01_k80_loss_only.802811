@@ -1,0 +1,16 @@
+vgg16_16_0.01_k80_loss_only
+==194543== NVPROF is profiling process 194543, command: python subsectionMain.py --arch vgg16 -b 16 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
+=> creating model 'vgg16'
+==194543== Execution timeout, stopping the application...
+==194543== Profiling application: python subsectionMain.py --arch vgg16 -b 16 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
+==194543== Profiling result:
+"Type","Time(%)","Time","Calls","Avg","Min","Max","Name"
+,%,ms,,us,us,us,
+"GPU activities",67.063910,1.272590,61,20.862000,19.840000,21.471000,"void at::native::_GLOBAL__N__54_tmpxft_00005dd4_00000000_10_SoftMax_compute_70_cpp1_ii_826a4626::cunn_SoftMaxForward<int=2, float, float, at::native::_GLOBAL__N__54_tmpxft_00005dd4_00000000_10_SoftMax_compute_70_cpp1_ii_826a4626::LogSoftMaxForwardEpilogue>(float*, float, int)"
+"GPU activities",32.936090,0.624988,61,10.245000,9.920000,11.264000,"void cunn_ClassNLLCriterion_updateOutput_kernel<float, float>(float*, float*, float*, long*, float*, int, int, int, int, long)"
+"API calls",55.993201,85966.794262,122,704645.854000,20.370000,1562524.685000,"cudaLaunchKernel"
+"API calls",43.978082,67519.889032,2352,28707.435000,0.432000,1311254.974000,"cudaEventDestroy"
+"API calls",0.021623,33.197910,1290,25.734000,0.260000,1481.027000,"cudaGetDevice"
+"API calls",0.006772,10.397812,2407,4.319000,1.440000,118.902000,"cudaEventQuery"
+"API calls",0.000243,0.373449,307,1.216000,0.305000,11.118000,"cudaSetDevice"
+"API calls",0.000079,0.120889,122,0.990000,0.183000,6.870000,"cudaGetLastError"

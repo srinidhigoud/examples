@@ -1,0 +1,20 @@
+alexnet_8_0.01_p40_full_mem
+==69182== NVPROF is profiling process 69182, command: python main.py --arch alexnet -b 8 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
+==69182== Execution timeout, stopping the application...
+==69182== Profiling application: python main.py --arch alexnet -b 8 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
+==69182== Profiling result:
+No kernels were profiled.
+"Type","Time(%)","Time","Calls","Avg","Min","Max","Name"
+,%,ms,,ms,ms,ms,
+"API calls",40.937240,11.043055,8,1.380381,1.196813,1.493054,"cuDeviceTotalMem"
+"API calls",28.929684,7.803948,756,0.010322,0.000208,0.484740,"cuDeviceGetAttribute"
+"API calls",27.474931,7.411520,8,0.926440,0.762117,1.041534,"cudaGetDeviceProperties"
+"API calls",2.391912,0.645232,8,0.080654,0.071870,0.092995,"cuDeviceGetName"
+"API calls",0.110040,0.029684,6,0.004947,0.000488,0.024286,"cudaGetDevice"
+"API calls",0.059628,0.016085,48,0.000335,0.000163,0.003893,"cudaGetDeviceCount"
+"API calls",0.045111,0.012169,5,0.002433,0.000858,0.007845,"cudaSetDevice"
+"API calls",0.029356,0.007919,12,0.000659,0.000274,0.004022,"cuDeviceGet"
+"API calls",0.014083,0.003799,4,0.000949,0.000252,0.002675,"cuDeviceGetCount"
+"API calls",0.004656,0.001256,1,0.001256,0.001256,0.001256,"cuInit"
+"API calls",0.003359,0.000906,1,0.000906,0.000906,0.000906,"cuDriverGetVersion"
+==69182== Generated result file: /scratch/pm2758/cloudML/imagenet/alexnet_8_0.01_p40_full_69182_mem.nvvp

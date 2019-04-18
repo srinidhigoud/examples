@@ -1,0 +1,17 @@
+vgg16_4_0.01_p40_loss_only
+==31006== NVPROF is profiling process 31006, command: python subsectionMain.py --arch vgg16 -b 4 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
+=> creating model 'vgg16'
+==31006== Execution timeout, stopping the application...
+==31006== Profiling application: python subsectionMain.py --arch vgg16 -b 4 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
+==31006== Profiling result:
+"Type","Time(%)","Time","Calls","Avg","Min","Max","Name"
+,%,us,,us,us,us,
+"GPU activities",62.599173,532.662000,64,8.322000,8.128000,8.800000,"void at::native::_GLOBAL__N__54_tmpxft_00005dd4_00000000_10_SoftMax_compute_70_cpp1_ii_826a4626::cunn_SoftMaxForward<int=2, float, float, at::native::_GLOBAL__N__54_tmpxft_00005dd4_00000000_10_SoftMax_compute_70_cpp1_ii_826a4626::LogSoftMaxForwardEpilogue>(float*, float, int)"
+"GPU activities",37.400827,318.247000,64,4.972000,4.640000,5.504000,"void cunn_ClassNLLCriterion_updateOutput_kernel<float, float>(float*, float*, float*, long*, float*, int, int, int, int, long)"
+"API calls",52.275422,84743939.678000,128,662062.028000,22.919000,1886611.781000,"cudaLaunchKernel"
+"API calls",47.697587,77322789.217000,1968,39290.035000,0.755000,1539512.403000,"cudaEventDestroy"
+"API calls",0.020568,33342.380000,1353,24.643000,0.291000,2208.131000,"cudaGetDevice"
+"API calls",0.006051,9809.636000,1969,4.982000,1.836000,163.848000,"cudaEventQuery"
+"API calls",0.000293,474.929000,322,1.474000,0.411000,17.025000,"cudaSetDevice"
+"API calls",0.000079,127.877000,128,0.999000,0.186000,10.257000,"cudaGetLastError"
+==31006== Warning: Some profiling data are not recorded. Make sure cudaProfilerStop() or cuProfilerStop() is called before application exit to flush profile data.

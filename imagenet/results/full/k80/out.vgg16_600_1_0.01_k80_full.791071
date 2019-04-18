@@ -1,0 +1,3 @@
+vgg16_600_1_0.01_k80_full
+==108356== NVPROF is profiling process 108356, command: python main.py --arch vgg16 -b 1 --epochs 1 --lr 0.01 /beegfs/work/courses/2019-CSCI-GA-3033-025/imagenet_pytorch_small
+=> creating model 'vgg16'
